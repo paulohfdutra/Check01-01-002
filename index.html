@@ -1,250 +1,349 @@
 <!DOCTYPE html>
 <html lang="pt-br">
+
     <head>
-        <meta charset="utf-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
-        <meta name="description" content="" />
-        <meta name="author" content="" />
-        <title>Sistema Consys de Frente de Loja</title>
-        <!-- Favicon-->
-        <link rel="icon" type="image/x-icon" href="assets/favicon.ico" />
-        <!-- Bootstrap icons-->
-        <link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.5.0/font/bootstrap-icons.css" rel="stylesheet" />
-        <!-- Core theme CSS (includes Bootstrap)-->
-        <link href="css/styles.css" rel="stylesheet" />
-        <link href="vendor/fontawesome-free/css/all.min.css" rel="stylesheet" type="text/css">
-        <link href="vendor/font-awesome-4.7.0/css/font-awesome.css" rel="stylesheet" type="text/css">
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+
+        <title>SGF Lite</title>
+
+        <link rel="stylesheet" href="css/animate.css">
+        <link rel="stylesheet" href="css/bootstrap.css">
+        <link rel="stylesheet" href="css/font-awesome.css">
+        <link rel="stylesheet" href="css/style.css">
         <script language=javascript type="text/javascript">
             dayName = new Array("domingo", "segunda", "terça", "quarta", "quinta", "sexta", "sábado")
             /*monName = new Array("janeiro", "fevereiro", "março", "abril", "maio", "junho", "agosto", "outubro", "novembro", "dezembro")*/
             now = new Date
         </script>
+        <script>
+            //document.addEventListener('contextmenu', event => event.preventDefault());
+        </script>
     </head>
-    <body>
-        <!-- Navigation-->
-        <nav class="navbar navbar-expand-lg navbar-dark bg-consys">
-            <div class="container-fluid px-4 px-lg-5">
-                <span class="navbar-brand" href="#!">
-                    <img src="img/logo.svg" style="height: 38px">
-                </span>
-                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation"><span class="navbar-toggler-icon"></span></button>
-                <div class="collapse navbar-collapse" id="navbarSupportedContent">
-                    <ul class="navbar-nav me-auto mb-2 mb-sm-0 ms-lg-4">
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle px-3" id="caixa" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-fw fa-dollar"></i> Caixa</a>
-                            <ul class="dropdown-menu" aria-labelledby="caixa">
-                                <li><a class="dropdown-item" href="#!">Consulta</a></li>
-                                <li><a class="dropdown-item" href="#!">Pré-Venda</a></li>
-                                <li><a class="dropdown-item" href="#!">Venda</a></li>
-                                <li><a class="dropdown-item" href="#!">Venda NFe</a></li>
-                                <li>
-                                    <div class="dropdown dropend">
-                                        <a class="dropdown-item dropdown-toggle" href="#" id="cancelamento" data-bs-toggle="dropdown" role="button" aria-expanded="false">Cancelamento</a>
-                                        <ul class="dropdown-menu" aria-labelledby="cancelamento">
-                                            <li><a class="dropdown-item" href="#">Última Nota</a></li>
-                                            <li><a class="dropdown-item" href="#">Cancelamento de Venda</a></li>
-                                            <!--<div class="dropdown dropend">
-                                                <a class="dropdown-item dropdown-toggle" href="#" id="dropdown-layouts" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Custom</a>
-                                                <div class="dropdown-menu" aria-labelledby="dropdown-layouts">
-                                                    <a class="dropdown-item" href="#">Fullscreen</a>
-                                                    <a class="dropdown-item" href="#">Empty</a>
-                                                    <div class="dropdown-divider"></div>
-                                                    <a class="dropdown-item" href="#">Magic</a>
-                                                </div>
-                                            </div>-->
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li><a class="dropdown-item" href="#!">Pagamento de Crediário</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Abertura de Operador</a></li>
-                                <li><a class="dropdown-item" href="#!">Fechamento de Operador</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Troca</a></li>
-                                <li><a class="dropdown-item" href="#!">Devolução</a></li>
-                                <li><a class="dropdown-item" href="#!">Recebimento</a></li>
-                                <li><a class="dropdown-item" href="#!">Sangria</a></li>
-                                <li><a class="dropdown-item" href="#!">Retirada</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Depósito</a></li>
-                                <li><a class="dropdown-item" href="#!">Nota de Crédito</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Sair</a></li>
 
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle px-3" id="fiscal" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-fw fa-file"></i> Fiscal</a>
-                            <ul class="dropdown-menu" aria-labelledby="fiscal">
-                                <li><a class="dropdown-item" href="#!">Fechamento de dia</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Nota Fiscal de Venda</a></li>
-                                <li><a class="dropdown-item" href="#!">Nota Fiscal Avulsa</a></li>
-                                <li><a class="dropdown-item" href="#!">Nota Fiscal Inventário</a></li>
-                                <li><a class="dropdown-item" href="#!">Nota Fiscal de Refaturamento</a></li>
-                                <li><a class="dropdown-item" href="#!">Reimprime Nota Fiscal</a></li>
-                                <li><a class="dropdown-item" href="#!">Notas para Incineração</a></li>
-                                <li><a class="dropdown-item" href="#!">Notas de Transferências</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Cancelamento de NFe</a></li>
-                                <li><a class="dropdown-item" href="#!">Inutilizar NFe</a></li>
-                                <li><a class="dropdown-item" href="#!">Cancelamento de NFCe</a></li>
-                                <li><a class="dropdown-item" href="#!">Inutilizar NFCe</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li>
-                                    <div class="dropdown dropend">
-                                        <a class="dropdown-item dropdown-toggle" href="#" id="contingencia" data-bs-toggle="dropdown" role="button" aria-expanded="false">Contingência</a>
-                                        <ul class="dropdown-menu" aria-labelledby="contingencia">
-                                            <li><a class="dropdown-item" href="#">Contingência</a></li>
-                                            <li><a class="dropdown-item" href="#">Painel de Contingência</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li><a class="dropdown-item" href="#!">Recria XMLs de NFCe</a></li>
-                                <li><a class="dropdown-item" href="#!">Carta de Correção</a></li>
-                                <li><a class="dropdown-item" href="#!">Localizar Arquivos XMLs</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle px-3" id="estoque" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-fw fa-cubes"></i> Estoque</a>
-                            <ul class="dropdown-menu" aria-labelledby="estoque">
-                                <li><a class="dropdown-item" href="#!">Compras Normais</a></li>
-                                <li><a class="dropdown-item" href="#!">Compras de Emergência</a></li>
-                                <li><a class="dropdown-item" href="#!">Espelho de Entrada</a></li>
-                                <li><a class="dropdown-item" href="#!">Baixa Pendências</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Transferência</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Devolução para Fornecedor</a></li>
-                                <li><a class="dropdown-item" href="#!">Devolução para Depósito</a></li>
-                                <li><a class="dropdown-item" href="#!">Perdas</a></li>
-                                <li><a class="dropdown-item" href="#!">Outras Saídas/Fornecedor</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle px-3" id="clientes" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-fw fa-users"></i> Clientes</a>
-                            <ul class="dropdown-menu" aria-labelledby="clientes">
-                                <li><a class="dropdown-item" href="#!">Entregas</a></li>
-                                <li><hr class="dropdown-divider" /></li>
-                                <li><a class="dropdown-item" href="#!">Uso Contínuo</a></li>
-                                <li><a class="dropdown-item" href="#!">Histórico de Crediário</a></li>
-                                <li><a class="dropdown-item" href="#!">Clientes de Entrega</a></li>
-                                <li><a class="dropdown-item" href="#!">Entregas Internet/Webloja</a></li>
-                                <li><a class="dropdown-item" href="#!">Trocas de Pontos Fidelidade</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle px-3" id="utilitarios" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-fw fa-wrench"></i> Utilitários</a>
-                            <ul class="dropdown-menu" aria-labelledby="utilitarios">
-                                <li><a class="dropdown-item" href="#!">Produtos Promocionais</a></li>
-                                <li><a class="dropdown-item" href="#!">Geração de Etiquetas</a></li>
-                                <li><a class="dropdown-item" href="#!">Importação de Preços</a></li>
-                                <li><a class="dropdown-item" href="#!">Listagem de Preços Novos</a></li>
-                                <li><a class="dropdown-item" href="#!">Importação de Dados</a></li>
-                                <li><a class="dropdown-item" href="#!">Exportação de Vendas</a></li>
-                                <li><a class="dropdown-item" href="#!">Importação de Terminal</a></li>
-                                <li><a class="dropdown-item" href="#!">TEF <small class="text-muted">Administrativo</small></a></li>
-                                <li><a class="dropdown-item" href="#!">Manutenção do Sistema</a></li>
-                                <li><a class="dropdown-item" href="#!">Solicitações de Transferência <small class="text-muted">SGF</small></a></li>
-                                <li><a class="dropdown-item" href="#!">Extrato de Vendas por Vendedor</a></li>
-                                <li><a class="dropdown-item" href="#!">Relatório de Produtos Parados</a></li>
-                                <li><a class="dropdown-item" href="#!">Relatório de Produtos em Excesso</a></li>
-                                <li><a class="dropdown-item" href="#!">Importação de Dados Extras</a></li>
-                                <li><a class="dropdown-item" href="#!">Relatório de Promoções</a></li>
-                                <li><a class="dropdown-item" href="#!">Log de Uso de Senhas</a></li>
-                                <li>
-                                    <div class="dropdown dropend dropend-end">
-                                        <a class="dropdown-item dropdown-toggle" href="#" id="relatorios" data-bs-toggle="dropdown" role="button" aria-expanded="false">Relatórios</a>
-                                        <ul class="dropdown-menu" aria-labelledby="relatorios">
-                                            <li><a class="dropdown-item" href="#">Farmácia Popular</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle px-3" id="finalizacoes" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-fw fa-money"></i> Finalizações</a>
-                            <ul class="dropdown-menu" aria-labelledby="finalizacoes">
-                                <li><a class="dropdown-item" href="#!">Conferência de Caixa</a></li>
-                                <li><a class="dropdown-item" href="#!">Conferência de Vendas</a></li>
-                                <li><a class="dropdown-item" href="#!">Vendas em Convênio</a></li>
-                                <li><a class="dropdown-item" href="#!">Vendas em Cartão</a></li>
-                                <li><a class="dropdown-item" href="#!">Extrato de Crediário</a></li>
-                                <li><a class="dropdown-item" href="#!">Outras Conferências</a></li>
-                            </ul>
-                        </li>
-                        <li class="nav-item dropdown">
-                            <a class="nav-link dropdown-toggle px-3" id="configuracoes" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false"><i class="fa fa-fw fa-cogs"></i> Configurações</a>
-                            <ul class="dropdown-menu dropdown-menu-end dropdown-menu-start" aria-labelledby="configuracoes">
-                                <li><a class="dropdown-item" href="#!">Gerais</a></li>
-                                <li><a class="dropdown-item" href="#!">Vendas</a></li>
-                                <li><a class="dropdown-item" href="#!">Boletos de Vendas</a></li>
-                                <li><a class="dropdown-item" href="#!">Alíquotas de ICMS</a></li>
-                                <li><a class="dropdown-item" href="#!">Parâmetros Fiscais</a></li>
-                                <li><a class="dropdown-item" href="#!">Filiais</a></li>
-                                <li><a class="dropdown-item" href="#!">Tipo de Cheque</a></li>
-                                <li><a class="dropdown-item" href="#!">Tipo de Cartões</a></li>
-                                <li><a class="dropdown-item" href="#!">Acesso ao Menu</a></li>
-                                <li><a class="dropdown-item" href="#!">Senhas</a></li>
-                                <li><a class="dropdown-item" href="#!">PBM</a></li>
-                                <li><a class="dropdown-item" href="#!">TEF</a></li>
-                                <li><a class="dropdown-item" href="#!">POS TEF</a></li>
-                                <li>
-                                    <div class="dropdown dropend dropend-end">
-                                        <a class="dropdown-item dropdown-toggle" href="#" id="notas_fiscais" data-bs-toggle="dropdown" role="button" aria-expanded="false">Notas Fiscais</a>
-                                        <ul class="dropdown-menu" aria-labelledby="notas_fiscais">
-                                            <li><a class="dropdown-item" href="#">Padrões de Notas e Preços</a></li>
-                                            <li><a class="dropdown-item" href="#">Número de Nota Fiscal</a></li>
-                                            <li><a class="dropdown-item" href="#">Configurar NFe</a></li>
-                                            <li><a class="dropdown-item" href="#">Número de NFCe</a></li>
-                                            <li><a class="dropdown-item" href="#">Configurar NFCe</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li><a class="dropdown-item" href="#!">Recarga Online</a></li>
-                                <li><a class="dropdown-item" href="#!">Descontos Gerente</a></li>
-                                <li><a class="dropdown-item" href="#!">Taxa de Entrega</a></li>
-                                <li>
-                                    <div class="dropdown dropend dropend-end">
-                                        <a class="dropdown-item dropdown-toggle" href="#" id="integracao" data-bs-toggle="dropdown" role="button" aria-expanded="false">Integração</a>
-                                        <ul class="dropdown-menu" aria-labelledby="integracao">
-                                            <li><a class="dropdown-item" href="#">Marka</a></li>
-                                            <li><a class="dropdown-item" href="#">CresceVendas</a></li>
-                                            <li><a class="dropdown-item" href="#">Shipay</a></li>
-                                            <li><a class="dropdown-item" href="#">Convênio FortePlus</a></li>
-                                            <li><a class="dropdown-item" href="#">Abbiamo</a></li>
-                                        </ul>
-                                    </div>
-                                </li>
-                                <li><a class="dropdown-item" href="#!">Envio de E-mails</a></li>
-                            </ul>
-                        </li>
-                        <!--<li class="nav-item"><a class="nav-link" aria-current="page" href="#!">Sair</a></li>-->
-                    </ul>
-                    <form class="d-flex">
+    <body id="body" class="fundo">
+        <nav id="navbar" class="navbar navbar-expand-sm navbar-dark bg-consys">
+            <div class="img_logo d-none d-lg-block">
+                <img src="img/logo.svg">
+            </div>
+            <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNavDropdown">
+                <ul class="navbar-nav">
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" accesskey="x" >
+                            <i class="fa fa-dollar-sign"></i>&nbsp; Cai<u>x</u>a
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><hr class="my-1"></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                    <li><a class="dropdown-item" href="">Another submenu action</a></li>
 
-                    </form>
-                </div>
+                                    <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                            <li><a class="dropdown-item" href="">Another submenu action</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" accesskey="a" >
+                            <i class="fa fa-file-alt"></i>&nbsp; Fisc<u>a</u>l
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                    <li><a class="dropdown-item" href="">Another submenu action</a></li>
+
+                                    <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                            <li><a class="dropdown-item" href="">Another submenu action</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" accesskey="e" >
+                            <i class="fa fa-box"></i>&nbsp; <u>E</u>stoque
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                    <li><a class="dropdown-item" href="">Another submenu action</a></li>
+
+                                    <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                            <li><a class="dropdown-item" href="">Another submenu action</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" accesskey="c" >
+                            <i class="fa fa-users"></i>&nbsp; <u>C</u>lientes
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                    <li><a class="dropdown-item" href="">Another submenu action</a></li>
+
+                                    <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                            <li><a class="dropdown-item" href="">Another submenu action</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" accesskey="u" >
+                            <i class="fa fa-wrench"></i>&nbsp; <u>U</u>tilitários
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                    <li><a class="dropdown-item" href="">Another submenu action</a></li>
+
+                                    <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                            <li><a class="dropdown-item" href="">Another submenu action</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" accesskey="z" >
+                            <i class="fa fa-money-check"></i>&nbsp; Finali<u>z</u>ações
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                    <li><a class="dropdown-item" href="">Another submenu action</a></li>
+
+                                    <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                            <li><a class="dropdown-item" href="">Another submenu action</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+                    <li class="nav-item dropdown">
+                        <a class="nav-link dropdown-toggle" href="#" id="navbarDropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false" accesskey="g" >
+                            <i class="fa fa-cogs"></i>&nbsp; Confi<u>g</u>urações
+                        </a>
+                        <ul class="dropdown-menu" aria-labelledby="navbarDropdownMenuLink">
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                            <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                <ul class="dropdown-menu">
+                                    <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                    <li><a class="dropdown-item" href="">Another submenu action</a></li>
+
+                                    <li class="dropdown-submenu" aria-haspopup="true" aria-expanded="false">
+                                        <a class="dropdown-item dropdown-toggle" href="#" id="subMenuLink">Submenu</a>
+                                        <ul class="dropdown-menu">
+                                            <li><a class="dropdown-item" href="http://www.google.com">Submenu action</a></li>
+                                            <li><a class="dropdown-item" href="">Another submenu action</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </li>
+                            <li><a class="dropdown-item" href="#">Action</a></li>
+                            <li><a class="dropdown-item" href="#">Another action</a></li>
+                        </ul>
+                    </li>
+                </ul>
             </div>
         </nav>
-        <header>
-            <div class="bg-light px-5 py-1 border-bottom mb-2">
-                <div class="container-fluid d-flex flex-wrap justify-content-end">
-                    <div class="text-end">
-                        <button type="button" class="btn btn-sm btn-light text-muted">
-                            <i class="fas fa-fw fa-search"></i> Clique aqui para Pesquisar
-                        </button>
-                    </div>
-                </div>
+
+        <div id="nav" class="navbar navbar-pesquisa navbar-expand bg-light" style="min-height: inherit; padding: 0rem 1rem; z-index: auto;">
+            <div id="logo" class="img_logo d-none">
+                <img src="img/logo.svg">
             </div>
-        </header>
-        <section>
-            <div class="container-fluid px-4 px-lg-5 mt-1">
-                <div class="row">
+            <span class="small navbar-text d-none d-lg-block">
+                Licenciado para <b>Drogaria VGM Comércio e Consultoria LTDA</b> | 00.215.264/0001-62
+            </span>
+            <ul class="navbar-nav d-lg-flex-row ml-md-auto d-md-flex" style="display: -webkit-inline-box;">
+                <li class="nav-item nav-item-sub dropdown">
+                    <div class="nav-link dropdown-icon" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-search"></i>&nbsp; Clique aqui para pesquisar</div>
+                </li>
+                <li class="nav-item nav-item-sub dropdown">
+                    <div class="nav-link dropdown-icon" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-wrench"></i></div>
+                    <ul class="dropdown-menu dropdown-menu-right fadeInDown animated-fast" aria-labelledby="dropdown1">
+                        <li class="dropdown-item"><a href="#"><i class="fa fa-comment"></i>&nbsp; Chat Online</a></li>
+                        <li class="dropdown-item"><a href="#"><i class="fa fa-wrench"></i>&nbsp; Suporte Consys</a></li>
+                    </ul>
+                </li>
+                <li class="nav-item nav-item-sub dropdown">
+                    <div class="nav-link dropdown-icon" id="dropdown1" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false"><i class="fa fa-user"></i></div>
+                    <ul class="dropdown-menu dropdown-menu-right fadeInDown animated-fast" aria-labelledby="dropdown1">
+                        <!--<li class="dropdown-item"><a href="#"><i class="fa fa-key"></i>&nbsp; Alterar Senha</a></li>-->
+                        <li class="dropdown-item"><a href="#" onclick="trocar();"><i id="fa" class="fa fa-toggle-off"></i>&nbsp; Modo Noturno</a></li>
+                        <!--<li class="dropdown-item"><a href="#" data-toggle="sidebar-colapse"><i id="fa" class="fa fa-window-restore"></i>&nbsp; Mudar Menu</a></li>-->
+                        <div class="dropdown-divider"></div>
+                        <li class="dropdown-item"><a href="login.html"><i class="fa fa-sign-out-alt"></i>&nbsp; Sair</a></li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+        <div class="row" id="body-row" style="overflow:auto;">
+            <!-- Sidebar -->
+            <div id="sidebar-container" class="sidebar-expanded shadow d-none pt-2">
+                <ul class="nav flex-column flex-nowrap overflow-hidden">
+                    <li class="nav-item">
+                        <a class="nav-link collapsed text-truncate" href="#menu-1" data-toggle="collapse" data-target="#menu-1"><i class="fa fa-pallet"></i>&nbsp; Controle de Estoque</a>
+                        <div class="collapse" id="menu-1" aria-expanded="false">
+                            <ul class="flex-column nav">
+                                <li class="nav-item">
+                                    <a class="nav-link py-1 text-truncate" href="#"><i class="fa fa-genderless"></i>&nbsp; <span>Orders</span></a></li>
+                                <li class="nav-item">
+                                    <a class="nav-link py-1 text-truncate" href="#menu-1-1" data-toggle="collapse" data-target="#menu-1-1"><i class="fa fa-genderless"></i>&nbsp; <span>Customers</span></a>
+                                    <div class="collapse" id="menu-1-1" aria-expanded="false">
+                                        <ul class="flex-column nav pl-3">
+                                            <li class="nav-item">
+                                                <a class="nav-link py-1 text-truncate" href="#">
+                                                    <i class="fa fa-genderless"></i>&nbsp; <span>Daily</span> </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link py-1 text-truncate" href="#">
+                                                    <i class="fa fa-genderless"></i>&nbsp;  Dashboard </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link py-1 text-truncate" href="#">
+                                                    <i class="fa fa-genderless"></i>&nbsp;  Charts </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link py-1 text-truncate" href="#">
+                                                    <i class="fa fa-genderless"></i>&nbsp;  Areas <span class="badge badge-green animated bounceIn ml-2">Novo</span></a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link py-1 text-truncate" href="#menu-1-2" data-toggle="collapse" data-target="#menu-1-2"><i class="fa fa-genderless"></i>&nbsp; <span>Customers</span></a>
+                                                <div class="collapse" id="menu-1-2" aria-expanded="false">
+                                                    <ul class="flex-column nav pl-3">
+                                                        <li class="nav-item">
+                                                            <a class="nav-link py-1 text-truncate" href="#">
+                                                                <i class="fa fa-genderless"></i>&nbsp; Daily </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link py-1 text-truncate" href="#">
+                                                                <i class="fa fa-genderless"></i>&nbsp;  Dashboard </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link py-1 text-truncate" href="#">
+                                                                <i class="fa fa-genderless"></i>&nbsp;  ChartsChartsChartsChartsChartsChartsCharts </a>
+                                                        </li>
+                                                        <li class="nav-item">
+                                                            <a class="nav-link py-1 text-truncate" href="#">
+                                                                <i class="fa fa-genderless"></i>&nbsp;  Areas </a>
+                                                        </li>
+                                                    </ul>
+                                                </div>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link py-1 text-truncate" href="#">
+                                                    <i class="fa fa-genderless"></i>&nbsp; Daily </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link py-1 text-truncate" href="#">
+                                                    <i class="fa fa-genderless"></i>&nbsp;  DashboardDashboardDashboardDashboard </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link py-1 text-truncate" href="#">
+                                                    <i class="fa fa-genderless"></i>&nbsp;  Charts </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a class="nav-link py-1 text-truncate" href="#">
+                                                    <i class="fa fa-genderless"></i>&nbsp;  Areas <span class="badge badge-green animated bounceIn ml-2">Novo</span></a>
+                                            </li>
+                                        </ul>
+                                    </div>
+                                </li>
+                            </ul>
+                        </div>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-truncate" href="#"><i class="fa fa-dollar-sign"></i>&nbsp; Sistema Financeiro</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-truncate" href="#"><i class="fa fa-edit"></i>&nbsp; Cadastros Gerais</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link text-truncate" href="#"><i class="fa fa-cogs"></i>&nbsp; Configurações</a>
+                    </li>
+
+                </ul>
+            </div>
+            <!-- MAIN -->
+            <div id="painel" class="container-fluid">
+                <div class="row mx-3 my-3">
+
                     <div class="bloco-consys">
                         <div class="icones-consys">
                             <div class="spacer">
-                                <a href="javascript://" class="cal_e wide boxtroca cinza">
+                                <a href="javascript://" class="cal_e wide boxtroca cinza" id="bemvindo">
                                     <h1>
                                         <script language=javascript type="text/javascript">
                                             document.write(now.getDate())
@@ -257,10 +356,6 @@
                                     </p>
                                     <h2 class="top cal_i">Seja bem-vindo(a)<br>de volta, ao sistema<br><b>Consys</b>!</h2>
                                 </a>
-                                <!--<a href="javascript://" class="box blue disabled">
-                                    <i class="fas fa-fw fa-search-plus"></i>
-                                    <h2>Consulta</h2>
-                                </a>-->
                                 <a href="javascript://" title="Efetue as Pré-vendas nesse menu e envie para serem finalizadas no caixa, no menu de Venda." class="wide boxtroca blue">
                                     <i class="fas fa-fw fa-shopping-basket"></i>
                                     <h2>Pré-Venda</h2>
@@ -270,7 +365,7 @@
                                     <h2>Venda</h2>
                                 </a>
                                 <a href="javascript://" title="Efetue o cancelamento de última venda neste menu." class="box blue">
-                                    <i class="fas fa-fw fa-close"></i>
+                                    <i class="fas fa-fw fa-window-close"></i>
                                     <h2>Cancelamento</h2>
                                 </a>
                                 <a href="javascript://" title="Faça pagamento e devolução de crediário a partir dessa tela." class="box blue">
@@ -305,9 +400,6 @@
                                     <i class="fas fa-fw fa-window-maximize"></i>
                                     <h2>Sangria</h2>
                                 </a>
-                                <!--<a href="javascript://" title="Clique aqui e fique por dentro sobre algumas novidades do sistema Consys." class="wide blue gallery">
-                                    <h2>Novidades</h2>
-                                </a>-->
                             </div>
 
                             <div class="spacer spacer2x">
@@ -351,11 +443,11 @@
                                     <h2>Conferência de Vendas</h2>
                                 </a>
                                 <a href="javascript://" title="Analise as operações do caixa como devolução, retiradas, perdas, etc." class="box bluefish">
-                                    <i class="fa fa-fw fa-hdd-o"></i>
+                                    <i class="fa fa-fw fa-file-invoice-dollar"></i>
                                     <h2>Outras Conferências</h2>
                                 </a>
                                 <a href="javascript://" title="Importe preços liberados a partir da sua Matriz." class="box bluefish">
-                                    <i class="fa fa-fw fa-cloud-upload"></i>
+                                    <i class="fa fa-fw fa-cloud-upload-alt"></i>
                                     <h2>Importação de Preços</h2>
                                     <!--<small>Última atualização em 18/09/2023</small>-->
                                 </a>
@@ -368,125 +460,35 @@
                                     <i class="fa fa-fw fa-download"></i>
                                     <h2>Exportação de Vendas</h2>
                                 </a>
-                                <a href="javascript://" class="box cinza">
+                                <a href="javascript://" class="box cinza" id="universidade">
                                     <i class="fa fa-fw fa-graduation-cap"></i>
                                     <h2>Universidade Consys</h2>
                                 </a>
                             </div>
                         </div>
                     </div>
+
                 </div>
-            </div>
-        </section>
-        <div class="menu-hidde" id="menu-hidde">
-            <div class="menu-trigger" id="menu-trigger">
-                <span>Novidades</span>
-            </div>
-            <div class="close" id="menu-closer">
-                <i class="fa fa-close"></i>
-            </div>
-            <div class="conteudo">
-                <div class="bg-consys-escuro px-3 py-4">
-                    <h4 class="text-white"><i class="fa fa-fw fa-bullhorn"></i> Novidades Consys</h4>
-                    <small class="text-white-75">Fique por dentro das principais novidades do <b>Sistema Consys</b>.</small>
-                </div>
-                <div class="my-1 p-3">
-                    <h6 class="border-bottom pb-2 mb-0">Atualizações Recentes</h6>
-                    <div class="d-flex text-muted pt-3">
-                        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-
-                        <p class="pb-3 mb-0 lh-sm border-bottom">
-                            <strong class="d-block text-gray-dark">@username</strong>
-                            Some representative placeholder content, with some information about this user. Imagine this being some sort of status update, perhaps?
-                        </p>
-                    </div>
-                    <div class="d-flex text-muted pt-3">
-                        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"></rect><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
-
-                        <p class="pb-3 mb-0 lh-sm border-bottom">
-                            <strong class="d-block text-gray-dark">@username</strong>
-                            Some more representative placeholder content, related to this other user. Another status update, perhaps.
-                        </p>
-                    </div>
-                    <div class="d-flex text-muted pt-3">
-                        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
-
-                        <p class="pb-3 mb-0 lh-sm border-bottom">
-                            <strong class="d-block text-gray-dark">@username</strong>
-                            This user also gets some representative placeholder content. Maybe they did something interesting, and you really want to highlight this in the recent updates.
-                        </p>
-                    </div>
-                    <div class="d-flex text-muted pt-3">
-                        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-
-                        <p class="pb-3 mb-0 lh-sm border-bottom">
-                            <strong class="d-block text-gray-dark">@username</strong>
-                            Some representative placeholder content, with some information about this user. Imagine this being some sort of status update, perhaps?
-                        </p>
-                    </div>
-                    <div class="d-flex text-muted pt-3">
-                        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"></rect><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
-
-                        <p class="pb-3 mb-0 lh-sm border-bottom">
-                            <strong class="d-block text-gray-dark">@username</strong>
-                            Some more representative placeholder content, related to this other user. Another status update, perhaps.
-                        </p>
-                    </div>
-                    <div class="d-flex text-muted pt-3">
-                        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
-
-                        <p class="pb-3 mb-0 lh-sm border-bottom">
-                            <strong class="d-block text-gray-dark">@username</strong>
-                            This user also gets some representative placeholder content. Maybe they did something interesting, and you really want to highlight this in the recent updates.
-                        </p>
-                    </div>
-                    <div class="d-flex text-muted pt-3">
-                        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#007bff"></rect><text x="50%" y="50%" fill="#007bff" dy=".3em">32x32</text></svg>
-
-                        <p class="pb-3 mb-0 lh-sm border-bottom">
-                            <strong class="d-block text-gray-dark">@username</strong>
-                            Some representative placeholder content, with some information about this user. Imagine this being some sort of status update, perhaps?
-                        </p>
-                    </div>
-                    <div class="d-flex text-muted pt-3">
-                        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#e83e8c"></rect><text x="50%" y="50%" fill="#e83e8c" dy=".3em">32x32</text></svg>
-
-                        <p class="pb-3 mb-0 lh-sm border-bottom">
-                            <strong class="d-block text-gray-dark">@username</strong>
-                            Some more representative placeholder content, related to this other user. Another status update, perhaps.
-                        </p>
-                    </div>
-                    <div class="d-flex text-muted pt-3">
-                        <svg class="bd-placeholder-img flex-shrink-0 me-2 rounded" width="32" height="32" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 32x32" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="#6f42c1"></rect><text x="50%" y="50%" fill="#6f42c1" dy=".3em">32x32</text></svg>
-
-                        <p class="pb-3 mb-0 lh-sm border-bottom">
-                            <strong class="d-block text-gray-dark">@username</strong>
-                            This user also gets some representative placeholder content. Maybe they did something interesting, and you really want to highlight this in the recent updates.
-                        </p>
-                    </div>
-                    <small class="d-block text-end mt-3">
-                        <a href="#">All updates</a>
-                    </small>
-                </div>
+                <!-- Ícones da área de trabalho fim -->
             </div>
         </div>
         <footer>
-            <div class="py-1 bg-light">
+            <div id="mensagem" class="py-1 bg-light">
                 <div class="container-fluid">
                     <marquee>
                         <i class="fa fa-fw fa-envelope-o"></i> Seja bem-vindo ao novo <b>Check</b>! Criamos essa nova interface para facilitar sua rotina e melhorar sua experiència com nosso sistema.
                     </marquee>
                 </div>
             </div>
-            <div class="py-2 bg-consys">
-                <div class="container-fluid d-flex flex-wrap justify-content-center">
-                    <div class="col-8 text-left col-lg-auto mb-lg-0 me-lg-auto text-white-75">
+            <div id="rodape" class="py-2 bg-consys">
+                <div class="container-fluid d-flex flex-wrap">
+                    <div class="d-lg-block text-white-75">
 
-                        <span><i class="fa fa-fw fa-dollar"></i> Preços atualizados até <b>18/09/2023</b></span>
+                        <span><i class="fa fa-fw fa-dollar-sign"></i> Preços atualizados até <b>18/09/2023</b></span>
                         <span class="mx-2">|</span>
                         <span><i class="fa fa-fw fa-cubes"></i> Dados atualizados até <b>18/09/2023</b></span>
                     </div>
-                    <div class="text-end">
+                    <div class="d-lg-flex-row ml-md-auto d-md-flex">
                         <div class="text-white-75">
                             <span><i class="fa fa-fw fa-circle text-success"></i> Online</span>
                             <span class="mx-2">|</span>                            
@@ -498,8 +500,9 @@
                 </div>
             </div>
         </footer>
-        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/js/bootstrap.bundle.min.js"></script>
-        <!-- Core theme JS-->
-        <script src="js/scripts.js"></script>
+
+        <script src='js/jquery.min.js'></script>
+        <script src='js/jquery-ui.min.js'></script><script src="js/bootstrap.js" ></script>
+        <script src="js/style.js"></script>
     </body>
 </html>
