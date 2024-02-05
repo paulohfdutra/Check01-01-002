@@ -23,43 +23,37 @@ function SidebarCollapse() {
         SeparatorTitle.addClass('d-flex');
     }
 }
+$(document).ready(function () {
 
-$('.dropdown-menu a.dropdown-toggle').on('click', function (e) {
-    if (!$(this).next().hasClass('show')) {
-        $(this).parents('.dropdown-menu').first().find('.show').removeClass('show');
-    }
+    $('.navbar .dropdown-item.dropdown').on('click', function (e) {
+        var $el = $(this).children('.dropdown-toggle');
+        if ($el.length > 0 && $(e.target).hasClass('dropdown-toggle')) {
+            var $parent = $el.offsetParent(".dropdown-menu");
+            $(this).parent("li").toggleClass('open');
 
-    var $subMenu = $(this).next('.dropdown-menu');
-    $subMenu.toggleClass('show');
-
-
-    $(this).parents('li.nav-item.dropdown.show').on('hidden.bs.dropdown', function (e) {
-        $('.dropdown-submenu .show').removeClass('show');
+            if (!$parent.parent().hasClass('navbar-nav')) {
+                if ($parent.hasClass('show')) {
+                    $parent.removeClass('show');
+                    $el.next().removeClass('show');
+                    $el.next().css({"top": -999, "left": -999});
+                } else {
+                    $parent.parent().find('.show').removeClass('show');
+                    $parent.addClass('show');
+                    $el.next().addClass('show');
+                    $el.next().css({"top": $el[0].offsetTop, "left": $parent.outerWidth() - 4});
+                }
+                e.preventDefault();
+                e.stopPropagation();
+            }
+            return;
+        }
     });
 
-    return false;
-});
-$('.dropdown-submenu .dropdown-menu').on('keydown', function (e) {
+    $('.navbar .dropdown').on('hidden.bs.dropdown', function () {
+        $(this).find('li.dropdown').removeClass('show open');
+        $(this).find('ul.dropdown-menu').removeClass('show open');
+    });
 
-    const items = $(this).find('.dropdown-item').get();
-    let index = items.indexOf(event.target)
-
-    if (e.which == 38) {
-        index--;
-        event.preventDefault();
-        event.stopPropagation();
-    } else
-    if (e.which == 40) {
-        index++;
-        event.preventDefault();
-        event.stopPropagation();
-    }
-
-    if (index < 0 || index > (items.length - 1)) {
-        return
-    }
-
-    items[index].focus()
 });
 
 function trocar() {
@@ -67,13 +61,6 @@ function trocar() {
     $('body').toggleClass('fundo1');
     $('#navbar').toggleClass('bg-dark');
     $('#nav').toggleClass('bg-night');
-    $('#mensagem').toggleClass('bg-night text-white');
-    $('#rodape').toggleClass('bg-dark text-white');
-    $('#universidade').toggleClass('grafite');
-    $('#bemvindo').toggleClass('grafite');
-    $('.blue').toggleClass('bluedark');
-    $('.bluefish').toggleClass('bluefishdark');
-    $('.lime').toggleClass('limedark');
 
     var obj2 = document.getElementById('fa');
     if (obj2.className == 'fa fa-toggle-on') {
@@ -172,18 +159,18 @@ $(".default, .hover").click(function () {
     $(this).parent(".button").toggleClass('active');
 });
 $("input, a", "form") // busca input e select no form
-        .keypress(function (e) { // evento ao presionar uma tecla válida keypress
+.keypress(function(e){ // evento ao presionar uma tecla válida keypress
+   
+   var k = e.which || e.keyCode; // pega o código do evento
+   
+   if(k == 13){ // se for ENTER
+      e.preventDefault(); // cancela o submit
+      $(this)
+      .closest('div') // seleciona a linha atual
+      .next() // seleciona a próxima linha
+      .find('input, a') // busca input ou select
+      .first() // seleciona o primeiro que encontrar
+      .focus(); // foca no elemento
+   }
 
-            var k = e.which || e.keyCode; // pega o código do evento
-
-            if (k == 13) { // se for ENTER
-                e.preventDefault(); // cancela o submit
-                $(this)
-                        .closest('div') // seleciona a linha atual
-                        .next() // seleciona a próxima linha
-                        .find('input, a') // busca input ou select
-                        .first() // seleciona o primeiro que encontrar
-                        .focus(); // foca no elemento
-            }
-
-        });
+});

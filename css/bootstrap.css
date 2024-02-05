@@ -5951,6 +5951,9 @@ a.close.disabled {
     .modal-xl {
         max-width: 1140px;
     }
+    .modal-xll {
+        max-width: 1460px;
+    }
 }
 
 .tooltip {
